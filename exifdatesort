@@ -1,1 +1,13 @@
 #!/bin/bash
+
+set -e
+
+EXIFDATETIME=$(identify -format "%[exif:DateTime]" $1)
+
+echo "exif:DateTime: $EXIFDATETIME - $1"
+
+DATE=$(echo $EXIFDATETIME | awk -F':| ' '{ print $1"-"$2"-"$3 }')
+
+[ -d $DATE ] || mkdir $DATE
+
+mv -n -v $1 $DATE/
