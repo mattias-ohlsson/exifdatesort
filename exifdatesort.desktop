@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Exif Date Sort
+Comment=Sort files in folders
+Comment[sv]=Sortera filer till datummappar
+Exec=exifdatesort %f
+Type=Application
+Terminal=true
+MimeType=image/jpeg;
