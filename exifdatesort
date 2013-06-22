@@ -8,6 +8,9 @@ echo "exif:DateTime: $EXIFDATETIME - $1"
 
 DATE=$(echo $EXIFDATETIME | awk -F':| ' '{ print $1"-"$2"-"$3 }')
 
-[ -d $DATE ] || mkdir $DATE
+BASEDIR=$(dirname $1)
+DATEDIR=$BASEDIR/$DATE
 
-mv -n -v $1 $DATE/
+[ -d $DATEDIR ] || mkdir $DATEDIR
+
+mv -n -v $1 $DATEDIR/
