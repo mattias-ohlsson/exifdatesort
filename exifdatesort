@@ -2,15 +2,15 @@
 
 set -e
 
-EXIFDATETIME=$(identify -format "%[exif:DateTime]" $1)
+EXIFDATETIME=$(identify -format "%[exif:DateTime]" "$1")
 
 echo "exif:DateTime: $EXIFDATETIME - $1"
 
 DATE=$(echo $EXIFDATETIME | awk -F':| ' '{ print $1"-"$2"-"$3 }')
 
-BASEDIR=$(dirname $1)
+BASEDIR=$(dirname "$1")
 DATEDIR=$BASEDIR/$DATE
 
-[ -d $DATEDIR ] || mkdir $DATEDIR
+[ -d "$DATEDIR" ] || mkdir "$DATEDIR"
 
-mv -n -v $1 $DATEDIR/
+mv -n -v "$1" "$DATEDIR/"
