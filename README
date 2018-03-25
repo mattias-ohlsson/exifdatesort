@@ -1,0 +1,12 @@
+    exifdatesort - Exif Date Sort
+
+https://github.com/mattias-ohlsson/exifdatesort
+
+INSTALL
+
+    make install
+
+UNINSTALL
+
+    rm -f /usr/bin/exifdatesort
+    rm -f /usr/share/applications/exifdatesort.desktop
